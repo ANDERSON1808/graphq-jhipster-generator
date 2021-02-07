@@ -1,0 +1,20 @@
+type Query{
+    hello: String! #Efimero
+    account: User
+}
+
+type Mutation{
+
+}
+
+
+type User {
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String!
+    activated: Boolean
+    createdDate: String
+    lastModifiedDate: String
+    authorities: [String!]!
+}

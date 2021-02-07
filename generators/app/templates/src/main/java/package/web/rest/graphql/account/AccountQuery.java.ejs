@@ -1,0 +1,29 @@
+package <%=packageName%>.web.graphql.account;
+
+import <%=packageName%>.repository.UserRepository;
+import <%=packageName%>.service.UserService;
+import <%=packageName%>.service.dto.UserDTO;
+import graphql.kickstart.servlet.context.GraphQLServletContext;
+import graphql.kickstart.tools.GraphQLQueryResolver;
+import graphql.schema.DataFetchingEnvironment;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+@Component
+@RequiredArgsConstructor
+public class AccountQuery implements GraphQLQueryResolver {
+
+    private final Logger log = LoggerFactory.getLogger(AccountQuery.class);
+
+    private final UserRepository userRepository;
+
+    private final UserService userService;
+
+    public String getIsAuthenticated(DataFetchingEnvironment env) {
+        GraphQLServletContext context = env.getContext();
+        log.debug("Graphql request to check if the current user is authenticated");
+        return context.getHttpServletRequest().getRemoteUser();
+    }
+}

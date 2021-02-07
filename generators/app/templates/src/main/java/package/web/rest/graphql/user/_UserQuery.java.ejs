@@ -1,0 +1,26 @@
+package <%=packageName%>.web.graphql.user;
+
+import <%=packageName%>.service.UserService;
+import <%=packageName%>.service.dto.UserDTO;
+import <%=packageName%>.web.graphql.account.AccountQuery;
+import graphql.kickstart.tools.GraphQLQueryResolver;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@RequiredArgsConstructor
+public class UserQuery implements GraphQLQueryResolver {
+
+    private static class AccountResourceException extends RuntimeException {
+        private AccountResourceException(String message) {
+            super(message);
+        }
+    }
+    private final UserService userService;
+
+    public UserDTO getAccount() {
+        return userService.getUserWithAuthorities()
+            .map(UserDTO::new)
+            .orElseThrow(() -> new AccountResourceException("User could not be found"));
+    }
+}

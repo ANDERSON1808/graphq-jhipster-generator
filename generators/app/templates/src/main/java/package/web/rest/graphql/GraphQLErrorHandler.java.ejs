@@ -1,0 +1,37 @@
+package <%=packageName%>.web.graphql;
+
+import graphql.ExceptionWhileDataFetching;
+import graphql.GraphQLError;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+public class GraphQLErrorHandler implements graphql.kickstart.execution.error.GraphQLErrorHandler {
+
+    /**
+     *
+     * @param errors
+     * @return List<GraphQLError>
+     */
+    @Override
+    public List<GraphQLError> processErrors(List<GraphQLError> errors) {
+        return errors.stream().map(this::unWrapError).collect(Collectors.toList());
+    }
+
+    /**
+     *
+     * @param error
+     * @return GraphQLError error
+     */
+    private GraphQLError unWrapError(GraphQLError error){
+        if(error instanceof ExceptionWhileDataFetching){
+            ExceptionWhileDataFetching unwrappedError = (ExceptionWhileDataFetching) error;
+            if(unwrappedError.getException() instanceof GraphQLError){
+                return (GraphQLError) unwrappedError.getException();
+            }
+        }
+        return error;
+    }
+}

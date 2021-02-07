@@ -1,0 +1,25 @@
+extend type Query{
+    isAuthenticated: String
+}
+
+extend type Mutation{
+    authenticate(input: loginVM!): Token
+    register(input:  ManagedUserVM): User
+}
+
+type Token{
+    token: String
+}
+
+input loginVM{
+    username: String!
+    password: String!
+    rememberMe: Boolean
+}
+
+input ManagedUserVM{
+    firstName: String
+    lastName: String
+    login: String!
+    password: String!
+}
