@@ -74,6 +74,13 @@ soon generation inclusion with filters and other crud functions
 # Help and contribution to the project
 
 Feel free to help, the project is open to PR
+#Outcome
+If I carry out the complete process, you should see the grapql playground in your project, soon the entities will be integrated into crud with their filters and queries
+
+![Alt text](img/Example.png?raw=true "Operation example
+")
+
+If you have problems in the installation do not hesitate to write to me
 
 # License
 

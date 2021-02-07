@@ -28,10 +28,10 @@ var JhipsterGenerator;
 var functions = {
     initializing: {
         displayLogo: function () {
-            this.log(`${chalk.blue('      _ _____ _____   _____ _______ ______ _______ ______    _______  ______  ______  _______   _______  ____   ')}`);
-            this.log(`${chalk.blue('     | | |  | |_   _|  __ \\ / ____|__  __|  ____|  __ \\  //  ___| ||__ \\ |   _   || |  | |  |     \\ |  |    ')}`);
-            this.log(`${chalk.blue('     | | |__| | | | | |__) | (___    | |  | |__  | |__) |  | |  |__ | |__) ||  |_|  || |__| |  |  _   \\|  |    ')}`);
-            this.log(`${chalk.blue(' _   | |  __  | | | |  ___/ \\___\\  | |  |  __| |  _  /   | | _  |||  _  / |   __  ||  __  |  |  \ \ |||  |    ')}`);
+            this.log(`${chalk.blue('      _ _____ _____   _____ _______ ______ _______ ______    _______  ______  ______  _______   _______  ____ ')}`);
+            this.log(`${chalk.blue('     | | |  | |_   _|  __ \\ / ____|__  __|  ____|  __ \\  //  ___| ||__ \\ |   _   || |  | |  |     \\ |  |   ')}`);
+            this.log(`${chalk.blue('     | | |__| | | | | |__) | (___    | |  | |__  | |__) |  | |  |__ | |__) ||  |_|  || |__| |  |  _   \\|  |   ')}`);
+            this.log(`${chalk.blue(' _   | |  __  | | | |  ___/ \\___\\  | |  |  __| |  _  /   | | _  |||  _  / |   __  ||  __  |  |  \ \ |||  |   ')}`);
             this.log(`${chalk.blue('| |__| | |  | |_| |_| |     ____) |  | |  | |____| | \\ \\ | |__| ||| \\ \\ |  |  | || |  | |  | __\ \//|  |___ ')}`);
             this.log(`${chalk.blue(' \\____/|_| |_|_____|_|    |_____/   |_|  |______|_|  \\_\\|______|||  \\_\\|__|  |_||_|  |_|  |____\_\ |______|')}`);
             this.log(chalk.white(`Running ${chalk.bold.blue('graphql-jhipster-generator')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
@@ -164,7 +164,6 @@ var functions = {
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphql-spring-boot-starter', '8.0.0', '');
                     this.addMavenDependency('com.graphql-java-kickstart', 'playground-spring-boot-starter', '8.0.0', '');
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphiql-spring-boot-starter', '8.0.0', '');
-                    this.addMavenDependency('com.graphql-java-kickstart', 'graphql-spring-boot-starter-test', '8.0.0', '');
                 }
             }
         },
