@@ -1,0 +1,1 @@
+"# graphq-jhipster-generator" 

@@ -1,0 +1,71 @@
+{
+  "name": "generator-jhipster-audit-helper",
+  "version": "1.0.3",
+  "description": "JHipster module to enable entity audit",
+  "keywords": [
+    "yeoman-generator",
+    "jhipster-module",
+    "jhipster-5",
+    "spring",
+    "spring-cloud",
+    "entity",
+    "entity-audit"
+  ],
+  "homepage": "https://github.com/chihosin/generator-jhipster-audit-helper",
+  "author": {
+    "name": "Chiho Sin",
+    "email": "chihosin@icloud.com",
+    "url": "https://github.com/ChihoSin"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chihosin/generator-jhipster-audit-helper.git"
+  },
+  "dependencies": {
+    "chalk": "2.4.1",
+    "generator-jhipster": "^5.0.0-beta.1",
+    "glob": "^7.1.2",
+    "jhipster-core": "^2.0.3",
+    "lodash": "^4.17.10",
+    "mkdirp": "0.5.1",
+    "pluralize": "^7.0.0",
+    "semver": "5.5.0",
+    "shelljs": "0.8.2",
+    "yeoman-generator": "2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.12.0",
+    "fs-extra": "6.0.1",
+    "mocha": "5.2.0",
+    "pre-commit": "^1.2.2",
+    "yeoman-assert": "3.1.1",
+    "yeoman-test": "1.7.2"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chihosin/generator-jhipster-feign-client/issues"
+  },
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=2.14.2"
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "release": "git push && git push --tags && npm publish",
+    "release:patch": "npm version patch -a -m \"Update to %s\" && npm run release",
+    "release:minor": "npm version minor -a -m \"Update to %s\" && npm run release",
+    "release:major": "npm version major -a -m \"Update to %s\" && npm run release",
+    "test": "mocha test/*"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
