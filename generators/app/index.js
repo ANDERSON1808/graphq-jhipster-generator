@@ -28,8 +28,13 @@ var JhipsterGenerator;
 var functions = {
     initializing: {
         displayLogo: function () {
-            // Have Yeoman greet the user.
-            this.log('Welcome to the ' + chalk.red('JHipster graphql-jhipster-generator') + ' generator! ' + chalk.yellow('v' + packagejs.version + '\n'));
+            this.log(`${chalk.blue('      _ _____ _____   _____ _______ ______ _______ ______    _______  ______  ______  _______   _______  ____   ')}`);
+            this.log(`${chalk.blue('     | | |  | |_   _|  __ \\ / ____|__  __|  ____|  __ \\  //  ___| ||__ \\ |   _   || |  | |  |     \\ |  |    ')}`);
+            this.log(`${chalk.blue('     | | |__| | | | | |__) | (___    | |  | |__  | |__) |  | |  |__ | |__) ||  |_|  || |__| |  |  _   \\|  |    ')}`);
+            this.log(`${chalk.blue(' _   | |  __  | | | |  ___/ \\___\\  | |  |  __| |  _  /   | | _  |||  _  / |   __  ||  __  |  |  \ \ |||  |    ')}`);
+            this.log(`${chalk.blue('| |__| | |  | |_| |_| |     ____) |  | |  | |____| | \\ \\ | |__| ||| \\ \\ |  |  | || |  | |  | __\ \//|  |___ ')}`);
+            this.log(`${chalk.blue(' \\____/|_| |_|_____|_|    |_____/   |_|  |______|_|  \\_\\|______|||  \\_\\|__|  |_||_|  |_|  |____\_\ |______|')}`);
+            this.log(chalk.white(`Running ${chalk.bold.blue('graphql-jhipster-generator')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
         }
     },
 
@@ -149,7 +154,7 @@ var functions = {
                 this.template('src/main/java/package/web/rest/graphql/account/AccountMutation.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountMutation.java', this, {});
                 this.template('src/main/java/package/web/rest/graphql/account/AccountQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountQuery.java', this, {});
                 this.template('src/main/java/package/web/rest/graphql/account/response/Token.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/response/Token.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/user/_UserQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/user/_UserQuery.java', this, {});
+                this.template('src/main/java/package/web/rest/graphql/user/UserQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/user/UserQuery.java', this, {});
                 // Partition code graphql
                 this.template('src/main/resources/graphql/account.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/account.graphqls', this, {});
                 this.template('src/main/resources/graphql/schema.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/schema.graphqls', this, {});
@@ -157,7 +162,7 @@ var functions = {
 
                 if (this.jhipsterMajorVersion > 4) {
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphql-spring-boot-starter', '8.0.0', '');
-                    this.addMavenDependency('com.graphql-java-kickstart', 'playground-spring-boot-starter', '8.0.0', 'runtime');
+                    this.addMavenDependency('com.graphql-java-kickstart', 'playground-spring-boot-starter', '8.0.0', '');
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphiql-spring-boot-starter', '8.0.0', '');
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphql-spring-boot-starter-test', '8.0.0', '');
                 }
