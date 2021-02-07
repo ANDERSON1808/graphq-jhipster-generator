@@ -149,7 +149,7 @@ var functions = {
                 this.template('src/main/java/package/web/rest/graphql/account/AccountMutation.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountMutation.java', this, {});
                 this.template('src/main/java/package/web/rest/graphql/account/AccountQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountQuery.java', this, {});
                 this.template('src/main/java/package/web/rest/graphql/account/response/Token.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/response/Token.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/account/user/_UserQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/user/_UserQuery.java', this, {});
+                this.template('src/main/java/package/web/rest/graphql/user/_UserQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/user/_UserQuery.java', this, {});
                 // Partition code graphql
                 this.template('src/main/resources/graphql/account.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/account.graphqls', this, {});
                 this.template('src/main/resources/graphql/schema.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/schema.graphqls', this, {});

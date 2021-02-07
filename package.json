@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-graphql",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JHipster module to include graphql to spring boot",
   "keywords": [
     "yeoman-generator",
