@@ -1,7 +1,7 @@
 {
-  "name": "generator-jhipster-audit-helper",
-  "version": "1.0.3",
-  "description": "JHipster module to enable entity audit",
+  "name": "generator-jhipster-graphql",
+  "version": "1.0.0",
+  "description": "JHipster module to include graphql to spring boot",
   "keywords": [
     "yeoman-generator",
     "jhipster-module",
@@ -9,13 +9,13 @@
     "spring",
     "spring-cloud",
     "entity",
-    "entity-audit"
+    "entity-graphql"
   ],
-  "homepage": "https://github.com/chihosin/generator-jhipster-audit-helper",
+  "homepage": "https://github.com/ANDERSON1808/graphq-jhipster-generator.git",
   "author": {
-    "name": "Chiho Sin",
-    "email": "chihosin@icloud.com",
-    "url": "https://github.com/ChihoSin"
+    "name": "Anderson Losada silva",
+    "email": "asesoriascsyj@gmail.com",
+    "url": "https://github.com/ANDERSON1808"
   },
   "files": [
     "generators"
@@ -23,7 +23,7 @@
   "main": "generators/app/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chihosin/generator-jhipster-audit-helper.git"
+    "url": "git+https://github.com/ANDERSON1808/graphq-jhipster-generator.git"
   },
   "dependencies": {
     "chalk": "2.4.1",
@@ -49,7 +49,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chihosin/generator-jhipster-feign-client/issues"
+    "url": "https://github.com/ANDERSON1808/graphq-jhipster-generator/issues"
   },
   "engines": {
     "node": ">=6.9.0",
