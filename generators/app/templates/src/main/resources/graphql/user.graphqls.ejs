@@ -1,19 +1,36 @@
 type Query{
-    account: User
+account: User
+isAuthenticated: String
 }
 
 type Mutation{
-
+updateAccount(input: UpdateAccountInput): User
+deleteUser: Response
 }
 
 
 type User {
-    id: ID!
-    firstName: String
-    lastName: String
-    email: String!
-    activated: Boolean
-    createdDate: String
-    lastModifiedDate: String
-    authorities: [String!]!
+id: ID!
+firstName: String
+lastName: String
+email: String!
+activated: Boolean
+person: Person
+authorities: [String!]!
+
+createdDate: Instant
+createdBy: String
+lastModifiedDate: Instant
+lastModifiedBy: String
+}
+
+input UpdateAccountInput{
+firstName: String
+lastName: String
+
+alias: String
+descripcion: String
+documentId: String
+birthdate: Date
+typeDocumentId: ID
 }

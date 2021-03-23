@@ -1,5 +1,4 @@
 # graphq-jhipster-generator
-![CodeGen](https://i.picasion.com/pic90/9cc4deb731a89c0ea66692aca7843fce.gif)
 
 
 This is a [JHipster](https://www.jhipster.tech/) module.

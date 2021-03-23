@@ -1,0 +1,10 @@
+extend type Query{
+    allAuthority(page: PageInput, sort: AuthoritySort): [Authority]
+    authority(id: String): Authority
+}
+
+type Authority{
+    codigo: String
+    name: String
+    activo: Boolean
+}

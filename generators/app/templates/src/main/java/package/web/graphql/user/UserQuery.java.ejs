@@ -1,0 +1,44 @@
+package <%=packageName%>.web.graphql.account.user;
+
+
+import <%=packageName%>.service.UserService;
+import <%=packageName%>.service.dto.UserDTO;
+import <%=packageName%>.web.graphql.account.AccountQuery;
+import graphql.kickstart.tools.GraphQLQueryResolver;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@RequiredArgsConstructor
+public class UserQuery implements GraphQLQueryResolver {
+
+private final Logger log = LoggerFactory.getLogger(UserQuery.class);
+
+private final UserService userService;
+
+/**
+* {@code GET  /account} : get the current user.
+*
+* @return the current user.
+* @throws RuntimeException {@code 500 (Internal Server Error)} if the user couldn't be returned.
+*/
+public UserDTO getAccount() {
+return userService.getUserWithAuthorities()
+.map(UserDTO::new)
+.orElseThrow(() -> new ErrorException("No se pudo encontrar al usuario", HttpStatus.NOT_FOUND.value(),
+HttpStatus.NOT_FOUND.getReasonPhrase(),
+HttpStatus.NOT_FOUND.toString()));
+}
+
+/**
+* {@code GET  /authenticate} : check if the user is authenticated, and return its login.
+*
+* @param env the HTTP request.
+* @return the login if the user is authenticated.
+*/
+public String getIsAuthenticated(DataFetchingEnvironment env) {
+GraphQLServletContext context = env.getContext();
+log.debug("Graphql request to check if the current user is authenticated");
+return context.getHttpServletRequest().getRemoteUser();
+}
+}

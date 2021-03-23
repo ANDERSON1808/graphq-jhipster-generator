@@ -1,4 +1,4 @@
-package <%=packageName%>.web.rest.graphql.account;
+package <%=packageName%>.web.graphql.account;
 
 import <%=packageName%>.domain.User;
 import <%=packageName%>.security.jwt.JWTFilter;
@@ -6,11 +6,11 @@ import <%=packageName%>.security.jwt.TokenProvider;
 import <%=packageName%>.service.UserService;
 import <%=packageName%>.service.dto.UserDTO;
 import <%=packageName%>.web.graphql.account.response.Token;
-import <%=packageName%>.web.rest.AccountResource;
-import <%=packageName%>.web.rest.UserJWTController;
-import <%=packageName%>.web.rest.errors.InvalidPasswordException;
-import <%=packageName%>.web.rest.vm.LoginVM;
-import <%=packageName%>.web.rest.vm.ManagedUserVM;
+import <%=packageName%>.web.AccountResource;
+import <%=packageName%>.web.UserJWTController;
+import <%=packageName%>.web.errors.InvalidPasswordException;
+import <%=packageName%>.web.vm.LoginVM;
+import <%=packageName%>.web.vm.ManagedUserVM;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;

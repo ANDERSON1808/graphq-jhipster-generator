@@ -1,0 +1,48 @@
+package <%=packageName%>.web.graphql.mutation;
+
+import <%=packageName%>.service.AccountService;
+import <%=packageName%>.service.UserService;
+import <%=packageName%>.service.dto.UserDTO;
+import <%=packageName%>.web.graphql.exception.ErrorException;
+import <%=packageName%>.web.graphql.input.account.UpdateAccountInput;
+import <%=packageName%>.web.graphql.reponse.Response;
+import graphql.kickstart.tools.GraphQLMutationResolver;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+
+@Component
+@RequiredArgsConstructor
+public class UserMutation implements GraphQLMutationResolver {
+
+    private final Logger log = LoggerFactory.getLogger(UserMutation.class);
+
+    private final UserService userService;
+
+    private final AccountService accountService;
+
+public UserDTO updateAccount(UpdateAccountInput accountInput) {
+log.debug("GraphQL request to update Person : {}", accountInput);
+
+UserDTO userLogin = accountService.getUserCurrent();
+
+userService.findOneByLogin(userLogin.getLogin()).orElseThrow(() -> new ErrorException("No se pudo encontrar al usuario", HttpStatus.NOT_FOUND.value(),
+HttpStatus.NOT_FOUND.getReasonPhrase(),
+HttpStatus.NOT_FOUND.toString()));
+userLogin.setFirstName(accountInput.getFirstName());
+userLogin.setLastName(accountInput.getLastName());
+return userService.updateAccount(userLogin);
+}
+
+public Response deleteUser() {
+log.debug("GraphQL delete user and person relation");
+UserDTO userLogin = accountService.getUserCurrent();
+PersonDTO person = accountService.getUserPersonCurrent(userLogin);
+userService.deleteUser(userLogin.getLogin());
+personService.delete(person.getId());
+//Delete companies
+return  new Response(userLogin.getId(), "Eliminado", HttpStatus.NO_CONTENT);
+}
+}

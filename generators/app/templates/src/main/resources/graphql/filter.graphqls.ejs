@@ -1,0 +1,104 @@
+extend input StringFilter{
+    contains: String
+    doesNotContain: String
+}
+
+input StringFilter{
+    equals: String
+    notEquals: String
+    specified: Boolean
+    in: [String]
+    noIn: [String]
+}
+
+extend input LongFilter{
+    equals: ID
+    notEquals: ID
+    in: [ID]
+    noIn: [ID]
+    specified: Boolean
+}
+
+input LongFilter{
+    greaterThan: ID
+    lessThan: ID
+    greaterThanOrEqual: ID
+    lessThanOrEqual: ID
+}
+
+extend input IntegerFilter{
+    equals: Int
+    notEquals: Int
+    in: [Int]
+    noIn: [Int]
+    specified: Boolean
+}
+
+input IntegerFilter{
+    greaterThan: Int
+    lessThan: Int
+    greaterThanOrEqual: Int
+    lessThanOrEqual: Int
+}
+
+extend input FloatFilter {
+    equals: Float
+    notEquals: Float
+    in: [Float]
+    noIn: [Float]
+    specified: Boolean
+}
+
+input FloatFilter{
+    greaterThan: Float
+    lessThan: Float
+    greaterThanOrEqual: Float
+    lessThanOrEqual: Float
+}
+
+extend input BigDecimalFilter {
+    equals: BigDecimal
+    notEquals: BigDecimal
+    in: [BigDecimal]
+    noIn: [BigDecimal]
+    specified: Boolean
+}
+
+input BigDecimalFilter{
+    greaterThan: Float
+    lessThan: Float
+    greaterThanOrEqual: Float
+    lessThanOrEqual: Float
+}
+
+input BooleanFilter{
+    equals: Boolean
+    notEquals: Boolean
+    specified: Boolean
+    in: [Boolean]
+    noIn: [Boolean]
+}
+
+extend input InstatFilter {
+    equals: Instant
+    notEquals: Instant
+    in: [Instant]
+    noIn: [Instant]
+    specified: Boolean
+}
+
+input InstatFilter{
+    greaterThan: String
+    lessThan: String
+    greaterThanOrEqual: String
+    lessThanOrEqual: String
+}
+
+
+input TipoPermisoFilter{
+    equals: String
+    notEquals: String
+    specified: String
+    in: [String]
+    noIn: [String]
+}

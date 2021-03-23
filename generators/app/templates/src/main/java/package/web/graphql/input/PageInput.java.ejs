@@ -1,0 +1,16 @@
+package <%=packageName%>.web.graphql.input;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
+@Data
+@Builder
+public class PageInput {
+    private final Integer page;
+    private final  Integer size;
+
+    public PageInput(@JsonProperty("page") Integer page, @JsonProperty("size") Integer size) {
+        this.page = page;
+        this.size = size;
+    }
+}

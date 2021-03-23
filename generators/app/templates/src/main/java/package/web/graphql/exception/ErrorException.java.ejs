@@ -1,0 +1,44 @@
+package <%=packageName%>.web.graphql.exception;
+
+import graphql.ErrorClassification;
+import graphql.GraphQLError;
+import graphql.GraphQLException;
+import graphql.language.SourceLocation;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ErrorException extends RuntimeException implements GraphQLError {
+
+    private final int status;
+    private final String title;
+    private final String detail;
+
+    public ErrorException(String message, int status, String title, String detail) {
+        super(message);
+        this.status = status;
+        this.title = title;
+        this.detail = detail;
+    }
+
+    @Override
+    public Map<String, Object> getExtensions() {
+        Map<String, Object> Attributes = new LinkedHashMap<>();
+
+        Attributes.put("status", this.status);
+        Attributes.put("title", this.title);
+        Attributes.put("detail", this.detail);
+        return Attributes;
+    }
+
+    @Override
+    public List<SourceLocation> getLocations() {
+        return null;
+    }
+
+    @Override
+    public ErrorClassification getErrorType() {
+        return null;
+    }
+}

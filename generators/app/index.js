@@ -150,15 +150,22 @@ var functions = {
         },
         writeTemplates: function () {
             if (!this.skipServer) {
-                this.template('src/main/java/package/web/rest/graphql/GraphQLErrorHandler.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/GraphQLErrorHandler.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/account/AccountMutation.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountMutation.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/account/AccountQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/AccountQuery.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/account/response/Token.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/response/Token.java', this, {});
-                this.template('src/main/java/package/web/rest/graphql/user/UserQuery.java.ejs', jhipsterVar.javaDir + 'web/rest/graphql/account/user/UserQuery.java', this, {});
+                this.template('src/main/java/package/web/graphql/GraphQLErrorHandler.java.ejs', jhipsterVar.javaDir + 'web/graphql/GraphQLErrorHandler.java', this, {});
+                this.template('src/main/java/package/web/graphql/account/AccountMutation.java.ejs', jhipsterVar.javaDir + 'web/graphql/account/AccountMutation.java', this, {});
+                this.template('src/main/java/package/web/graphql/account/AccountQuery.java.ejs', jhipsterVar.javaDir + 'web/graphql/account/AccountQuery.java', this, {});
+                this.template('src/main/java/package/web/graphql/account/response/Token.java.ejs', jhipsterVar.javaDir + 'web/graphql/account/response/Token.java', this, {});
+                this.template('src/main/java/package/web/graphql/user/UserQuery.java.ejs', jhipsterVar.javaDir + 'web/graphql/account/user/UserQuery.java', this, {});
+                this.template('src/main/java/package/web/graphql/mutation/UserMutation.java.ejs', jhipsterVar.javaDir + 'web/graphql/mutation/UserMutation.java', this, {});
+                this.template('src/main/java/package/web/graphql/input/Order.java.ejs', jhipsterVar.javaDir + 'web/graphql/input/Order.java', this, {});
+                this.template('src/main/java/package/web/graphql/input/PageInput.java.ejs', jhipsterVar.javaDir + 'web/graphql/input/PageInput.java', this, {});
+                this.template('src/main/java/package/web/graphql/exception/AccountResourceException.java.ejs', jhipsterVar.javaDir + 'web/graphql/exception/AccountResourceException.java', this, {});
+                this.template('src/main/java/package/web/graphql/exception/ErrorException.java.ejs', jhipsterVar.javaDir + 'web/graphql/exception/ErrorException.java', this, {});
                 // Partition code graphql
                 this.template('src/main/resources/graphql/account.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/account.graphqls', this, {});
                 this.template('src/main/resources/graphql/schema.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/schema.graphqls', this, {});
                 this.template('src/main/resources/graphql/user.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/user.graphqls', this, {});
+                this.template('src/main/resources/graphql/authority.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/authority.graphqls', this, {});
+                this.template('src/main/resources/graphql/filter.graphqls.ejs', jhipsterVar.resourceDir + 'graphql/filter.graphqls', this, {});
 
                 if (this.jhipsterMajorVersion > 4) {
                     this.addMavenDependency('com.graphql-java-kickstart', 'graphql-spring-boot-starter', '8.0.0', '');
